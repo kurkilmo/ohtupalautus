@@ -3,10 +3,8 @@ from player_reader import PlayerReader
 
 
 class StatisticsService:
-    def __init__(self):
-        reader = PlayerReader()
-
-        self._players = reader.get_players()
+    def __init__(self, player_reader: PlayerReader):
+        self._players = player_reader.get_players()
 
     def search(self, name):
         for player in self._players:
@@ -34,10 +32,5 @@ class StatisticsService:
             key=sort_by_points
         )
 
-        result = []
-        i = 0
-        while i <= how_many:
-            result.append(sorted_players[i])
-            i += 1
-
-        return result
+        # Alkuperäinen palautti yhden pelaajan liikaa
+        return sorted_players[:how_many]
