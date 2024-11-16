@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.7 on linux)" generated="20241116 18:02:26.856" rpa="false" schemaversion="4">
+<suite id="s1" name="Register" source="/home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src/tests/register.robot">
+<test id="s1-t1" name="Register With Valid Username And Too Short Password" line="25">
+<kw name="Input New Command" library="resource" type="SETUP">
+<kw name="Input" library="AppLibrary">
+<arg>new</arg>
+<status status="PASS" starttime="20241116 18:02:26.887" endtime="20241116 18:02:26.888"/>
+</kw>
+<status status="PASS" starttime="20241116 18:02:26.887" endtime="20241116 18:02:26.888"/>
+</kw>
+<kw name="Input Credentials" library="resource">
+<arg>username</arg>
+<arg>kissa</arg>
+<kw name="Input" library="AppLibrary">
+<arg>${username}</arg>
+<status status="PASS" starttime="20241116 18:02:26.890" endtime="20241116 18:02:26.890"/>
+</kw>
+<kw name="Input" library="AppLibrary">
+<arg>${password}</arg>
+<status status="PASS" starttime="20241116 18:02:26.890" endtime="20241116 18:02:26.891"/>
+</kw>
+<kw name="Run Application" library="AppLibrary">
+<status status="PASS" starttime="20241116 18:02:26.891" endtime="20241116 18:02:26.892"/>
+</kw>
+<status status="PASS" starttime="20241116 18:02:26.889" endtime="20241116 18:02:26.893"/>
+</kw>
+<kw name="Output Should Contain" library="AppLibrary">
+<arg>Password must be at least 8 characters long</arg>
+<status status="PASS" starttime="20241116 18:02:26.894" endtime="20241116 18:02:26.895"/>
+</kw>
+<status status="PASS" starttime="20241116 18:02:26.886" endtime="20241116 18:02:26.895"/>
+</test>
+<status status="PASS" starttime="20241116 18:02:26.862" endtime="20241116 18:02:26.896"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Register">Register</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
