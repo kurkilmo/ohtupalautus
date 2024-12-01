@@ -1,48 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.7 on linux)" generated="20241116 18:02:26.856" rpa="false" schemaversion="4">
-<suite id="s1" name="Register" source="/home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src/tests/register.robot">
-<test id="s1-t1" name="Register With Valid Username And Too Short Password" line="25">
-<kw name="Input New Command" library="resource" type="SETUP">
-<kw name="Input" library="AppLibrary">
-<arg>new</arg>
-<status status="PASS" starttime="20241116 18:02:26.887" endtime="20241116 18:02:26.888"/>
+<robot generator="Robot 6.1.1 (Python 3.12.7 on linux)" generated="20241201 16:19:44.145" rpa="false" schemaversion="4">
+<suite id="s1" name="Src" source="/home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src">
+<suite id="s1-s1" name="Tests" source="/home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src/tests">
+<suite id="s1-s1-s1" name="Login" source="/home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src/tests/login.robot">
+<test id="s1-s1-s1-t1" name="Login With Correct Credentials" line="6">
+<kw name="Create User And Input Login Command" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20241201 16:19:44.192" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20241201 16:19:44.191" endtime="20241201 16:19:44.192"/>
 </kw>
-<status status="PASS" starttime="20241116 18:02:26.887" endtime="20241116 18:02:26.888"/>
+<kw name="Input Login Command" library="resource">
+<status status="NOT RUN" starttime="20241201 16:19:44.192" endtime="20241201 16:19:44.192"/>
 </kw>
-<kw name="Input Credentials" library="resource">
-<arg>username</arg>
-<arg>kissa</arg>
-<kw name="Input" library="AppLibrary">
-<arg>${username}</arg>
-<status status="PASS" starttime="20241116 18:02:26.890" endtime="20241116 18:02:26.890"/>
+<status status="FAIL" starttime="20241201 16:19:44.189" endtime="20241201 16:19:44.192"/>
 </kw>
-<kw name="Input" library="AppLibrary">
-<arg>${password}</arg>
-<status status="PASS" starttime="20241116 18:02:26.890" endtime="20241116 18:02:26.891"/>
-</kw>
-<kw name="Run Application" library="AppLibrary">
-<status status="PASS" starttime="20241116 18:02:26.891" endtime="20241116 18:02:26.892"/>
-</kw>
-<status status="PASS" starttime="20241116 18:02:26.889" endtime="20241116 18:02:26.893"/>
-</kw>
-<kw name="Output Should Contain" library="AppLibrary">
-<arg>Password must be at least 8 characters long</arg>
-<status status="PASS" starttime="20241116 18:02:26.894" endtime="20241116 18:02:26.895"/>
-</kw>
-<status status="PASS" starttime="20241116 18:02:26.886" endtime="20241116 18:02:26.895"/>
+<status status="FAIL" starttime="20241201 16:19:44.188" endtime="20241201 16:19:44.193">Setup failed:
+No keyword with name 'Create User' found.</status>
 </test>
-<status status="PASS" starttime="20241116 18:02:26.862" endtime="20241116 18:02:26.896"/>
+<test id="s1-s1-s1-t2" name="Login With Incorrect Password" line="10">
+<kw name="Create User And Input Login Command" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20241201 16:19:44.195" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20241201 16:19:44.195" endtime="20241201 16:19:44.195"/>
+</kw>
+<kw name="Input Login Command" library="resource">
+<status status="NOT RUN" starttime="20241201 16:19:44.196" endtime="20241201 16:19:44.196"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.194" endtime="20241201 16:19:44.196"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.193" endtime="20241201 16:19:44.196">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<test id="s1-s1-s1-t3" name="Login With Nonexistent Username" line="14">
+<kw name="Create User And Input Login Command" type="SETUP">
+<kw name="Create User">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<msg timestamp="20241201 16:19:44.199" level="FAIL">No keyword with name 'Create User' found.</msg>
+<status status="FAIL" starttime="20241201 16:19:44.199" endtime="20241201 16:19:44.199"/>
+</kw>
+<kw name="Input Login Command" library="resource">
+<status status="NOT RUN" starttime="20241201 16:19:44.199" endtime="20241201 16:19:44.199"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.198" endtime="20241201 16:19:44.200"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.197" endtime="20241201 16:19:44.200">Setup failed:
+No keyword with name 'Create User' found.</status>
+</test>
+<status status="FAIL" starttime="20241201 16:19:44.183" endtime="20241201 16:19:44.200"/>
+</suite>
+<suite id="s1-s1-s2" name="Register" source="/home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src/tests/register.robot">
+<test id="s1-s1-s2-t1" name="Register With Valid Username And Password" line="6">
+<kw name="Input New Command" library="resource" type="SETUP">
+<kw name="Input">
+<arg>new</arg>
+<msg timestamp="20241201 16:19:44.208" level="FAIL">No keyword with name 'Input' found.</msg>
+<status status="FAIL" starttime="20241201 16:19:44.208" endtime="20241201 16:19:44.208"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.206" endtime="20241201 16:19:44.208"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.205" endtime="20241201 16:19:44.208">Setup failed:
+No keyword with name 'Input' found.</status>
+</test>
+<test id="s1-s1-s2-t2" name="Register With Already Taken Username And Valid Password" line="10">
+<kw name="Input New Command" library="resource" type="SETUP">
+<kw name="Input">
+<arg>new</arg>
+<msg timestamp="20241201 16:19:44.211" level="FAIL">No keyword with name 'Input' found.</msg>
+<status status="FAIL" starttime="20241201 16:19:44.211" endtime="20241201 16:19:44.211"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.210" endtime="20241201 16:19:44.212"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.209" endtime="20241201 16:19:44.212">Setup failed:
+No keyword with name 'Input' found.</status>
+</test>
+<test id="s1-s1-s2-t3" name="Register With Too Short Username And Valid Password" line="15">
+<kw name="Input New Command" library="resource" type="SETUP">
+<kw name="Input">
+<arg>new</arg>
+<msg timestamp="20241201 16:19:44.215" level="FAIL">No keyword with name 'Input' found.</msg>
+<status status="FAIL" starttime="20241201 16:19:44.214" endtime="20241201 16:19:44.215"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.213" endtime="20241201 16:19:44.215"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.213" endtime="20241201 16:19:44.215">Setup failed:
+No keyword with name 'Input' found.</status>
+</test>
+<test id="s1-s1-s2-t4" name="Register With Enough Long But Invalid Username And Valid Password" line="19">
+<kw name="Input New Command" library="resource" type="SETUP">
+<kw name="Input">
+<arg>new</arg>
+<msg timestamp="20241201 16:19:44.217" level="FAIL">No keyword with name 'Input' found.</msg>
+<status status="FAIL" starttime="20241201 16:19:44.217" endtime="20241201 16:19:44.217"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.215" endtime="20241201 16:19:44.217"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.215" endtime="20241201 16:19:44.218">Setup failed:
+No keyword with name 'Input' found.</status>
+</test>
+<test id="s1-s1-s2-t5" name="Register With Valid Username And Too Short Password" line="25">
+<kw name="Input New Command" library="resource" type="SETUP">
+<kw name="Input">
+<arg>new</arg>
+<msg timestamp="20241201 16:19:44.220" level="FAIL">No keyword with name 'Input' found.</msg>
+<status status="FAIL" starttime="20241201 16:19:44.219" endtime="20241201 16:19:44.220"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.218" endtime="20241201 16:19:44.220"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.218" endtime="20241201 16:19:44.220">Setup failed:
+No keyword with name 'Input' found.</status>
+</test>
+<test id="s1-s1-s2-t6" name="Register With Valid Username And Long Enough Password Containing Only Letters" line="29">
+<kw name="Input New Command" library="resource" type="SETUP">
+<kw name="Input">
+<arg>new</arg>
+<msg timestamp="20241201 16:19:44.223" level="FAIL">No keyword with name 'Input' found.</msg>
+<status status="FAIL" starttime="20241201 16:19:44.223" endtime="20241201 16:19:44.223"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.220" endtime="20241201 16:19:44.224"/>
+</kw>
+<status status="FAIL" starttime="20241201 16:19:44.220" endtime="20241201 16:19:44.224">Setup failed:
+No keyword with name 'Input' found.</status>
+</test>
+<status status="FAIL" starttime="20241201 16:19:44.201" endtime="20241201 16:19:44.225"/>
+</suite>
+<status status="FAIL" starttime="20241201 16:19:44.181" endtime="20241201 16:19:44.226"/>
+</suite>
+<status status="FAIL" starttime="20241201 16:19:44.145" endtime="20241201 16:19:44.226"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="9" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Register">Register</stat>
+<stat pass="0" fail="9" skip="0" id="s1" name="Src">Src</stat>
+<stat pass="0" fail="9" skip="0" id="s1-s1" name="Tests">Src.Tests</stat>
+<stat pass="0" fail="3" skip="0" id="s1-s1-s1" name="Login">Src.Tests.Login</stat>
+<stat pass="0" fail="6" skip="0" id="s1-s1-s2" name="Register">Src.Tests.Register</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20241201 16:19:44.188" level="ERROR">Error in file '/home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src/tests/resource.robot' on line 2: Importing library '/home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src/AppLibrary.py' failed: IndentationError: expected an indented block after function definition on line 15 (user_service.py, line 18)
+Traceback (most recent call last):
+  File "/home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src/AppLibrary.py", line 3, in &lt;module&gt;
+    from services.user_service import UserService
+PYTHONPATH:
+  /home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src
+  /home/kurki/.cache/pypoetry/virtualenvs/login-robot-Y0CcXJz5-py3.12/bin
+  /usr/lib/python312.zip
+  /usr/lib/python3.12
+  /usr/lib/python3.12/lib-dynload
+  /home/kurki/.cache/pypoetry/virtualenvs/login-robot-Y0CcXJz5-py3.12/lib/python3.12/site-packages</msg>
+<msg timestamp="20241201 16:19:44.205" level="ERROR">Error in file '/home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src/tests/resource.robot' on line 2: Importing library '/home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src/AppLibrary.py' failed: IndentationError: expected an indented block after function definition on line 15 (user_service.py, line 18)
+Traceback (most recent call last):
+  File "/home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src/AppLibrary.py", line 3, in &lt;module&gt;
+    from services.user_service import UserService
+PYTHONPATH:
+  /home/kurki/kurssirepot/palautus-ohtu/osa3/login-robot/src
+  /home/kurki/.cache/pypoetry/virtualenvs/login-robot-Y0CcXJz5-py3.12/bin
+  /usr/lib/python312.zip
+  /usr/lib/python3.12
+  /usr/lib/python3.12/lib-dynload
+  /home/kurki/.cache/pypoetry/virtualenvs/login-robot-Y0CcXJz5-py3.12/lib/python3.12/site-packages</msg>
 </errors>
 </robot>
