@@ -2,7 +2,7 @@
 
 Retrospektiivejä pidetään usein sptrinttien lopussa tiimin kesken,
 ja niissä keskustellaan sptrintin kulusta mm. onnistumisten, epäonnistumisten 
-ja parannusehdotusten kannalta
+ja parannusehdotusten kannalta.
 
 ## Retrospektiivitekniikoita
 
